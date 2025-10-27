@@ -1,0 +1,39 @@
+name: Update Profile README
+
+on:
+  schedule:
+    # weekly (change as you like)
+    - cron: '0 0 * * 0'
+  workflow_dispatch: {}
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install PyGithub
+
+      - name: Generate README
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+        run: python3 scripts/generate_readme.py
+
+      - name: Commit & push if changed
+        run: |
+          git config user.name "${{ github.actor }}"
+          git config user.email "${{ github.actor }}@users.noreply.github.com"
+          if [ -n "$(git status --porcelain)" ]; then
+            git add README.md
+            git commit -m "chore: update profile README (tech stack & stats)"
+            git push
+          else
+            echo "No changes to commit"
