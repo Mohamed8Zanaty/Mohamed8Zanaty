@@ -56,11 +56,13 @@
 
 <div align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api?username=Mohamed8Zanaty&show_icons=true&theme=dracula">
-    <img alt="Mohamed's GitHub stats" src="https://github-readme-stats.vercel.app/api?username=Mohamed8Zanaty&show_icons=true&theme=default" height="170" />
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Mohamed8Zanaty/Mohamed8Zanaty/main/profile-summary-card-output/github_dark/3-stats.svg">
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Mohamed8Zanaty/Mohamed8Zanaty/main/profile-summary-card-output/github/3-stats.svg">
+    <img alt="Mohamed's GitHub stats" src="https://raw.githubusercontent.com/Mohamed8Zanaty/Mohamed8Zanaty/main/profile-summary-card-output/github/3-stats.svg" width="48%" />
   </picture>
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api/top-langs?username=Mohamed8Zanaty&layout=compact&langs_count=6&theme=dracula">
-    <img alt="Mohamed's most used languages" src="https://github-readme-stats.vercel.app/api/top-langs?username=Mohamed8Zanaty&layout=compact&langs_count=6&theme=default" height="170" />
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Mohamed8Zanaty/Mohamed8Zanaty/main/profile-summary-card-output/github_dark/1-repos-per-language.svg">
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Mohamed8Zanaty/Mohamed8Zanaty/main/profile-summary-card-output/github/1-repos-per-language.svg">
+    <img alt="Mohamed's most used languages" src="https://raw.githubusercontent.com/Mohamed8Zanaty/Mohamed8Zanaty/main/profile-summary-card-output/github/1-repos-per-language.svg" width="48%" />
   </picture>
 </div>
