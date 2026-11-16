@@ -12,6 +12,8 @@ on:
   push:
     branches:
       - main
+    paths-ignore:
+      - "profile-summary-card-output/**"
 
 # Never run two copies at once, so they can't fight over the `output` branch
 concurrency:
