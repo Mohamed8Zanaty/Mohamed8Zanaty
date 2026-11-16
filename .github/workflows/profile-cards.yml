@@ -1,0 +1,35 @@
+name: Generate profile summary cards
+
+on:
+  schedule:
+    # Daily at 00:00 UTC.
+    # (The upstream example's "* */24 * * *" runs every minute of hour 0.)
+    - cron: "0 0 * * *"
+
+  # Lets you run it manually from the Actions tab
+  workflow_dispatch:
+
+concurrency:
+  group: profile-summary-cards
+  cancel-in-progress: false
+
+jobs:
+  build:
+    name: Generate cards
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write # lets the action commit the SVGs back to the repo
+
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Generate profile summary cards
+        uses: vn7n24fzkq/github-profile-summary-cards@release
+        env:
+          # A personal access token stored as a repo secret (setup steps are in my message).
+          GITHUB_TOKEN: ${{ secrets.SUMMARY_GITHUB_TOKEN }}
+        with:
+          USERNAME: ${{ github.repository_owner }}
+          BRANCH_NAME: "main" # cards are committed to profile-summary-card-output/ on this branch
+          # EXCLUDE: "html,css"   # optional: languages to leave out of the language cards
